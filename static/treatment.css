@@ -1,0 +1,231 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('images/2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    overflow-x: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #00467f, #0af);
+    padding: 1px 1px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+header h1 span {
+    font-weight: 500;
+    font-size: 40px;
+    opacity: 0.9;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+nav a {
+    text-decoration: none;
+    color: #00467f;
+    font-weight: 600;
+    margin: 0 20px;
+    padding: 10px 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+nav a:hover, nav a.active{
+    background: #00467f;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 15px rgba(0, 70, 127, 0.3);
+}
+
+h1 {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 32px;
+    color: white;
+}
+
+/* Container */
+.container {
+    width: 50%;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+    margin-top: 30px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #00467f;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #00467f;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+label, select {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #00467f;
+    background: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+}
+
+select:hover {
+    background: #eef2f3;
+    border-color: #a5cc82;
+}
+
+button {
+    background: #00467f;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #a5cc82;
+    color: #00467f;
+    transform: translateY(-3px);
+    box-shadow: 0px 5px 15px rgba(0, 70, 127, 0.3);
+}
+
+.error {
+    color: red;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #00467f;
+    font-weight: 600;
+    background: #f1f5f8;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background: #00467f;
+    color: white;
+}
+
+td {
+    background: #f9f9f9;
+}
+
+td:hover {
+    background: #eef2f3;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border: 2px solid #00467f;
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #00467f;
+    color: #fff;
+    margin-top: 40px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

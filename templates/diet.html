@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Plan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='diet.css') }}">
+</head>
+<body>
+    <header>
+        <h1>AI for Oncology: <span>Transforming Cancer Care with Advanced Diagnosis</span></h1>
+    </header>
+ 
+        <nav>
+            <a href="/">Dashboard</a>
+            <a href="/diagnosis">Cancer Diagnosis</a>
+<a href="/treatment">Treatment Advisory</a>
+            <a href="/diet" class="active">Diet Plan</a>
+            <a href="/visualizations">Visualizations</a>
+            <a href="/hospitals">Hospitals</a>
+            <a href="/insurance">Insurance Desk</a>
+        </nav>
+    </header>
+
+
+<div class="container">
+    <h2>Select Cancer Type & Diabetes Status</h2>
+    <form method="POST" action="/diet">
+        <label for="cancer_type">Choose Cancer Type:</label>
+        <select name="cancer_type" id="cancer_type" required>
+            <option value="Leukemia Begin">Leukemia Begin</option>
+            <option value="Leukemia Early">Leukemia Early</option>
+            <option value="Leukemia Pre">Leukemia Pre</option>
+            <option value="Leukemia Pro">Leukemia Pro</option>
+            <option value="Brain Tumor">Brain Tumor</option>
+            <option value="Brain Glioma">Brain Glioma</option>
+            <option value="Brain Meningioma">Brain Meningioma</option>
+            <option value="Breast Malignant">Breast Malignant</option>
+            <option value="Breast Benign">Breast Benign</option>
+            <option value="Cervical Dyskeratotic">Cervical Dyskeratotic</option>
+            <option value="Cervix Koilocytotic">Cervix Koilocytotic</option>
+            <option value="Cervix Metaplastic">Cervix Metaplastic</option>
+            <option value="Cervix Parabasal">Cervix Parabasal</option>
+        </select>
+
+        <label for="diabetic">Is the patient diabetic?</label>
+        <select name="diabetic" id="diabetic" required>
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select>
+
+        <button type="submit">Get Diet Plan</button>
+    </form>
+    {% if diet_plan %}
+        <div class="highlight-box">
+            <h3>Recommended Diet Plan:</h3>
+            <p class="diet-text">{{ diet_plan }}</p>
+        </div>
+    {% endif %}
+</div>
+    <footer>
+        <p>© 2025 AI for Oncology | Transforming Cancer Care with AI</p>
+    </footer>
+</body>
+</html>

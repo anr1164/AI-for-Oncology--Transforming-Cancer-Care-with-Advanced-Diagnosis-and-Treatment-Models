@@ -1,0 +1,153 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('images/2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    overflow-x: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #00467f, #0af);
+    padding: 1px 1px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+header h1 span {
+    font-weight: 500;
+    font-size: 40px;
+    opacity: 0.9;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+nav a {
+    text-decoration: none;
+    color: #00467f;
+    font-weight: 600;
+    margin: 0 20px;
+    padding: 10px 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+nav a:hover, nav a.active {
+    background: #00467f;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 15px rgba(0, 70, 127, 0.3);
+}
+
+/* Precaution Section */
+h1 {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 32px;
+    color: white;
+}
+
+.precautions-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
+    animation: fadeIn 1s ease-in-out;
+    flex-grow: 1;
+}
+
+.precaution-card {
+    background: linear-gradient(135deg, #ffffff, #f1f5f8);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.precaution-card::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: #00467f;
+    top: 0;
+    left: 0;
+}
+
+.precaution-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.precaution-card h2 {
+    font-size: 22px;
+    color: #00467f;
+    margin-bottom: 10px;
+}
+
+.precaution-card p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #00467f;
+    color: #fff;
+    margin-top: 40px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

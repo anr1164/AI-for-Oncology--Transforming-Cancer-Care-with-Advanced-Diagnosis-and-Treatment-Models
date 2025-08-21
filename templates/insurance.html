@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='insurance.css') }}">
+    <title>Cancer Insurance</title>
+</head>
+<body>
+    <header>
+        <h1>AI for Oncology: <span>Transforming Cancer Care with Advanced Diagnosis</span></h1>
+    </header>
+    
+    <nav>
+        <a href="/">Home</a>
+        <a href="/diagnosis">Cancer Diagnosis</a>
+        <a href="/treatment">Treatment Advisory</a>
+        <a href="/diet">Diet Plan</a>
+        <a href="/visualizations">Visualizations</a>
+        <a href="/hospitals">Hospitals</a>
+        <a href="/insurance" class="active">Insurance Desk</a>
+    </nav>
+    
+    <div class="container">
+        <h1>Insurance Companies Providing Cancer Coverage</h1>
+        
+        <input type="text" id="searchBar" placeholder="Search for an insurance plan..." onkeyup="filterInsurance()">
+        
+        <div class="insurance-list">
+            <div class="insurance-card">
+                <h2><a href="https://licindia.in" target="_blank">LIC Cancer Cover</a></h2>
+                <p>Sum Assured: ₹10-50 Lakhs</p>
+            </div>
+            <div class="insurance-card">
+                <h2><a href="https://www.hdfclife.com" target="_blank">HDFC Life Cancer Care</a></h2>
+                <p>Covers all stages of cancer</p>
+            </div>
+            <div class="insurance-card">
+                <h2><a href="https://www.iciciprulife.com" target="_blank">ICICI Pru Cancer Protect</a></h2>
+                <p>Sum Insured: ₹20-50 Lakhs</p>
+            </div>
+            <div class="insurance-card">
+                <h2><a href="https://www.maxlifeinsurance.com" target="_blank">Max Life Cancer Insurance</a></h2>
+                <p>Lump sum payout</p>
+            </div>
+            <div class="insurance-card">
+                <h2><a href="https://www.adityabirlacapital.com" target="_blank">Aditya Birla Activ Cancer Secure</a></h2>
+                <p>Covers chemotherapy costs</p>
+            </div>
+            <div class="insurance-card">
+                <h2><a href="https://www.bajajallianz.com" target="_blank">Bajaj Allianz Critical Illness Cover</a></h2>
+                <p>Covers major cancers</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 AI for Oncology | Transforming Cancer Care with AI</p>
+    </footer>
+    
+    <script>
+        function filterInsurance() {
+            let input = document.getElementById("searchBar").value.toLowerCase();
+            let cards = document.querySelectorAll(".insurance-card");
+            
+            cards.forEach(card => {
+                let text = card.innerText.toLowerCase();
+                if (text.includes(input)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

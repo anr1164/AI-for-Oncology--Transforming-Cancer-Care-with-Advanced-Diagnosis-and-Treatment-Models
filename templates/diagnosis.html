@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Oncology - Cancer Diagnosis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='diagnosis.css') }}">
+</head>
+<body>
+    <header>
+        <h1>AI for Oncology: <span>Transforming Cancer Care with Advanced Diagnosis</span></h1>
+    </header>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/diagnosis" class="active">Cancer Diagnosis</a>
+        <a href="/treatment">Treatment Advisory</a>
+        <a href="/diet">Diet Plans</a>
+        <a href="/visualizations">Visualizations</a>
+        <a href="/hospitals">Hospitals</a>
+        <a href="/insurance">Insurance Desk</a>
+    </nav>
+
+    <div class="container">
+        <h2>Upload Image for Cancer Diagnosis</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <button type="submit">Diagnose</button>
+        </form>
+
+        {% if prediction %}
+            <div class="result">
+                <p><strong>Prediction:</strong> {{ prediction }}</p>
+                <p><strong>Confidence:</strong> {{ confidence }}</p>
+                {% if diet_plan %}
+                    <p><strong>Suggested Diet:</strong> {{ diet_plan }}</p>
+                {% endif %}
+                {% if image_path %}
+                    <img src="{{ url_for('static', filename='images/' + image_path) }}" alt="Uploaded Image">
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+
+    <footer>
+        <p>© 2025 AI for Oncology | Transforming Cancer Care with AI</p>
+    </footer>
+</body>
+</html>

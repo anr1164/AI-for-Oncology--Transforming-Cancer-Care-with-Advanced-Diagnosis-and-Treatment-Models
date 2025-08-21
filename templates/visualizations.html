@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='visualisations.css') }}">
+    <title>Cancer Visualizations</title>
+</head>
+<body>
+    <header>
+        <h1>AI for Oncology: <span>Transforming Cancer Care with Advanced Diagnosis</span></h1>
+    </header>
+
+              <nav>
+    <a href="/">Home</a>
+    <a href="/diagnosis">Cancer Diagnosis</a>
+<a href="/treatment">Treatment Advisory</a>
+    <a href="/diet">Diet Plan</a>
+    <a href="/visualizations" class="active">Visualizations</a>
+    <a href="/hospitals">Hospitals</a>
+    <a href="/insurance">Insurance Desk</a>
+</nav>
+<div class="container">
+    <h2>Cancer Data Visualizations</h2>
+     <h3>Select a Visualization</h3>
+    
+    <select id="visualizationSelect" onchange="showVisualization()">
+        <option value="">Select...</option>
+        {% for img in images %}
+            <option value="{{ img }}">{{ img.replace('.png', '').replace('_', ' ') }}</option>
+        {% endfor %}
+    </select>
+
+    <br><br>
+    <img id="visualizationImage" src="" alt="Selected Visualization" style="display:none; width:600px; border: 1px solid black;">
+
+    <script>
+        function showVisualization() {
+            let selectedFile = document.getElementById("visualizationSelect").value;
+            if (selectedFile) {
+                document.getElementById("visualizationImage").src = "/visualizations/image/" + selectedFile;
+                document.getElementById("visualizationImage").style.display = "block";
+            } else {
+                document.getElementById("visualizationImage").style.display = "none";
+            }
+        }
+    </script>
+    </div>
+    <footer>
+        <p>© 2025 AI for Oncology | Transforming Cancer Care with AI</p>
+    </footer>
+</body>
+</html>

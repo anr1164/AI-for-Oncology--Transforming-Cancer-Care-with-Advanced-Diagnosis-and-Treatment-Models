@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer Prediction</title>
+    <link rel="stylesheet" href="static/index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cancer Prediction</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <label for="file">Upload an image:</label><br><br>
+            <input type="file" name="file" accept="image/*" required><br><br>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+
+        {% if prediction %}
+        <div class="result">
+            <p><strong>Prediction:</strong> {{ prediction }}</p>
+            <p><strong>Confidence:</strong> {{ confidence }}</p>
+            {% if diet_plan %}
+            <p><strong>Suggested Diet:</strong> {{ diet_plan }}</p>
+            {% endif %}
+        </div>
+        {% if image_path %}
+        <img src="{{ url_for('static', filename='images/' + image_path) }}" alt="Uploaded Image">
+        {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>

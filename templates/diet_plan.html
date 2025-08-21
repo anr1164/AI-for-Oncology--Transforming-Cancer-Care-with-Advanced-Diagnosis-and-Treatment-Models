@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diet Plan</title>
+</head>
+<body>
+<nav>
+    <a href="/">Home</a>
+    <a href="/diagnosis">Cancer Diagnosis</a>
+    <a href="/diet_plan">Diet Plan</a>
+    <a href="/visualizations">Visualizations</a>
+    <a href="/hospitals">Hospitals</a>
+    <a href="/insurance">Insurance Desk</a>
+</nav>
+    <h1>Select Cancer Type</h1>
+    <form method="POST">
+        <select name="cancer_type">
+            {% for cancer in DIET_PLANS.keys() %}
+                <option value="{{ cancer }}">{{ cancer }}</option>
+            {% endfor %}
+        </select>
+        <label>Diabetic?</label>
+        <input type="radio" name="diabetic" value="yes"> Yes
+        <input type="radio" name="diabetic" value="no"> No
+        <button type="submit">Get Diet Plan</button>
+    </form>
+    {% if diet %}
+        <p>Recommended Diet: {{ diet }}</p>
+    {% endif %}
+</body>
+</html>

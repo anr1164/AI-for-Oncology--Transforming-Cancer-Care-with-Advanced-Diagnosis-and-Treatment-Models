@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer Treatment Advisory</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='treatment.css') }}">
+</head>
+<body>
+    <header>
+        <h1>AI for Oncology: <span>Transforming Cancer Care with Advanced Diagnosis</span></h1>
+    </header>
+<nav>
+    <a href="/">Home</a>
+    <a href="/diagnosis">Cancer Diagnosis</a>
+    <a href="/treatment" class="active">Treatment Advisory</a>
+    <a href="/diet">Diet Plan</a>
+    <a href="/visualizations">Visualizations</a>
+    <a href="/hospitals">Hospitals</a>
+    <a href="/insurance">Insurance Desk</a>
+</nav>
+    <div class="container">
+        <h2>Cancer Treatment Advisory</h2>
+        
+<h3>Select Cancer Type for Treatment Advisory</h3>
+    <form method="POST">
+        <select name="cancer_type">
+            <option value="" disabled selected>Select Cancer Type</option>
+            {% for cancer in treatment_advisory.keys() %}
+                <option value="{{ cancer }}" {% if cancer == selected_cancer %}selected{% endif %}>{{ cancer }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Get Treatment</button>
+    </form>
+
+    {% if treatment_data %}
+        <h2>Treatment for {{ selected_cancer }}</h2>
+        <table>
+            <tr>
+                <th>Treatment Type</th>
+                <th>Details</th>
+            </tr>
+            {% for treatment, details in treatment_data.items() %}
+                <tr>
+                    <td>{{ treatment }}</td>
+                    <td>{{ details }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+
+
+        <p style="font-size: 12px; color: red; margin-top: 10px;">
+            *Sometimes treatment may vary based on individual unique health conditions.
+        </p>
+    </div>
+        <footer>
+            <p>© 2025 AI for Oncology | Transforming Cancer Care with AI</p>
+        </footer>
+</body>
+</html>
